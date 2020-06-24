@@ -12,13 +12,23 @@
     <a href="index.html"><img src="logo.png" alt="logo" class="logo"></a>
   <div class="showcase-2">
     <div class="intro">
+    <script>
+        var formData = location.search;
+        formData = formData.substring(1, formData.length);
+        while (formData.indexOf("&") !== -1) {
+            formData = formData.replace("&", "=");
+         }
+        formData = formData.split("=");
 
-    <h1>Congratulations, Alina!</h1>
-    <p> We will get back to you soon! Now start packing!</p>  
+        document.write("<h1>" + "Congratulations, " + formData[1] + " " + formData[3] +"!"+ "</h1>");
 
+
+    </script>
+    <p> We will get back to you soon! Now start packing!</p>
 
 </div>
 
 </div>
+
   </body>
 </html>
