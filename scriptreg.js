@@ -79,16 +79,20 @@ function validateEmail() {
 		for (var i = 0; i < elementCount; i++) {
 			currentElement =  emailInputs[i];
       var newCurElem=currentElement.value;
-		if (!newCurElem.match(/@/g)) {
-			currentElement.style.background = "rgb(255,233,233)"; //if the input is not a number or empty, changes the box color to red
-			emailValidity = false;
 
-		} else {
-			currentElement.style.background = "white";
-		}
-	}
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(newCurElem))
+  {
+    currentElement.style.background = "white";
+    emailValidity=true;
+  } else{
+    currentElement.style.background = "rgb(255,233,233)";
+    emailValidity = false;
+  }
+
+  }
+
 		if (emailValidity === false) {
-			throw "* Please, enter correct E-mail address.";//throws the error message
+			throw "* Please enter correct E-mail address.";//throws the error message
 		}
 			emailErrorDiv.style.display = "none";
 			emailErrorDiv.innerHTML = "";

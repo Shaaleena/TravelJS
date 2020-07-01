@@ -11,7 +11,7 @@
   <body>
     <a href="index.html"><img src="logo.png" alt="logo" class="logo"></a>
   <div class="showcase-2">
-    <div class="intro">
+    <div class="intro intro-2">
     <script>
         var formData = location.search;
         formData = formData.substring(1, formData.length);
@@ -24,8 +24,14 @@
 
 
     </script>
-    <p> We will get back to you soon! Now start packing!</p>
-
+    <script>
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var dateTime = date+' '+time;
+      document.write("<p>" +"We've got your request ("+ dateTime+ ")."+"</p>");
+    </script>
+    <p> We will get back to you soon. You can start packing and getting ready!</p>
 </div>
 
 </div>

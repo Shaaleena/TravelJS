@@ -1,7 +1,8 @@
 "use strict";
 var httpRequest=false;
 var list=[];
-var formValidity=true; //global variable
+var i=1;  //counter
+
 
 var zip=document.getElementById("zip");
 if(zip.addEventListener){
@@ -93,8 +94,22 @@ function getRequestObject(){
     zipCodefield.value="";
     newItem.value="";
     nextNewItem.value="";
+    i++;
     generateList();
+
   }
+
+
+  function processInput(){
+      var btnCont=document.getElementById("btn-reg"); //function that will execute on clic
+      if(i===4){ //once the list is finished, throws the message
+      btnCont.style.display="block";
+      }
+      else btn.style.display="none";
+    }
+    document.getElementById("button-1").addEventListener("click", processInput);
+
+
 
   function moveToTop(evt) { //function that moves item on the top when First button clicked
     if(evt===undefined){
